@@ -59,6 +59,10 @@ public class AuthenticationRestController {
         final String token = jwtTokenUtil.generateToken(userDetails);
         Map result = new HashMap();
         result.put("token", token);
+        User user = userRepository.findById(((JwtUser)userDetails).getId()).orElse(null);
+        if(user.getOrganizer() != null) {
+            result.put("user", LabMapper.INSTANCE.getOrganizerDTO(user.getOrganizer()));
+        }
         return ResponseEntity.ok(result);
     }
 
