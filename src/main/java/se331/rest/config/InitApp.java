@@ -136,6 +136,5 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
             userRepository.save(user1);
             userRepository.save(user2);
             userRepository.save(user3);
-            
     }
 }
