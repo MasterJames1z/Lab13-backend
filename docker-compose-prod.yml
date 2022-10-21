@@ -18,7 +18,7 @@ services:
   backend:
     image: worawut111/331-securitylab
     ports:
-      - 8088:8080
+      - 8999:8080
     environment:
       - JAVA_PROFILE=prod,db
     restart: on-failure
